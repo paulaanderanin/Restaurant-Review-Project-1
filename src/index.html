@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="data/restaurants.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Reviews</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container" >
+      <div id="map" role="application" aria-label="Map with restaurants"></div>
+    </section>
+    <section class="align-center">
+      <div class="filter-options" aria-label="filter options">
+        <h2>Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" role="combobox" aria-label="Neighboorhoods submenu" aria-haspopup="listbox" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <select id="cuisines-select" name="cuisines" role="combobox" aria-label="Cuisines submenu" aria-haspopup="listbox" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list" aria-labelledby="restaurant-list"></ul>
+    </section>
+  </main>
+
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGIFXw3x6PBYxDRFJZOrK7mL9EF1VS1ZE&libraries=places&callback=initMap"></script>
+  <!-- picturefill
+  <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+  </script>
+  <script src="js/picturefill.js"></script> -->
+
+  <!-- Service Worker -->
+  <script src="js/app.js" async></script>
+
+
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/" role="link" aria-label="home page link"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>

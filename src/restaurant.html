@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <title>Restaurant Info</title>
+  <link rel="manifest" href="data/restaurants.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="inside">
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <ul id="breadcrumb" >
+      <li><a href="/">Home</a></li>
+    </ul>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent">
+    <!-- Beginning map -->
+
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container" onchange="updateRestaurants()" aria-labelledby="restaurant-name">
+      <h1 id="restaurant-name" aria-describedby="restaurant-name"></h1>
+      <picture><img id="restaurant-img"></picture>
+      <p id="restaurant-cuisine" arial-label="food category"></p>
+      <address><p id="restaurant-address"></p></adress>
+      <table id="restaurant-hours" aria-label="restaurant-hours"></table>
+    </section>
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <section id="reviews-container" aria-label="reviews">
+      <ul id="reviews-list" aria-label="reviews list"></ul>
+    </section>
+    <!-- End reviews -->
+    <section id="map-container" aria-label="Map" role="application">
+      <div id="map"></div>
+    </section>
+    <!-- End map -->
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer" >
+    Copyright (c) 2017 <a href="/" role="link" aria-label="home page link"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+
+  <!-- Beginning scripts -->
+  <!-- Database helpers -->
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- picturefill
+  <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+  </script>
+  <script src="js/picturefill.js"></script> -->
+  <!-- Google Maps -->
+  <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script>-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGIFXw3x6PBYxDRFJZOrK7mL9EF1VS1ZE&libraries=places&callback=initMap"></script>
+  <!-- Service Worker -->
+  <script src="js/app.js" async></script>
+  <!-- End scripts -->
+</body>
+
+</html>
