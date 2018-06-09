@@ -285,7 +285,18 @@ nav h1 a {
 .align-center{
 	text-align: center;
 }
-	@media screen and (min-width:1024px){
+.skip-link {
+	position:absolute;
+	padding:8px;
+	z-index: 10;
+	top: 150px;
+	right: 0;
+}
+.skip-link:focus {
+	background:#000;
+}
+
+@media screen and (min-width:1024px){
 		#restaurants-list li {
 			max-width:25%;
 		}
