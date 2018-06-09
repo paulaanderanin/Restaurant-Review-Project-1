@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="data/restaurants.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url"                content="http://localhost:8888/" /><!-- I would replace with the actual url -->
+  <meta property="og:type"               content="restaurant.restaurant" />
+  <meta property="og:title"              content="New York City Restaurant Directory" />
+  <meta property="og:description"        content="List of restaurant reviews in New York City" />
+  <meta property="og:image"              content="img/restaurantreviews.jpg" />
   <title>Restaurant Reviews</title>
 </head>
 
@@ -18,10 +23,11 @@
 
   <main id="maincontent">
     <section id="map-container" >
-      <div id="map" role="application" aria-label="Map with restaurants"></div>
+      <button class="skip-link" aria-label="Skip Map" tabindex="-1"><a href="#filter-options">Skip Map</a></button>
+      <div id="map" role="application" aria-label="Map with restaurants" tabindex="-1"></div>
     </section>
-    <section class="align-center">
-      <div class="filter-options" aria-label="filter options">
+    <section class="align-center" id="filter-options" aria-label="filter options">
+      <div class="filter-options">
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" role="combobox" aria-label="Neighboorhoods submenu" aria-haspopup="listbox" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
